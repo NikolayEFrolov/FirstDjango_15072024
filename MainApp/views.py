@@ -3,11 +3,11 @@ from django.shortcuts import render
 
 # Create your views here.
 author = {
-    "Имя" : "Nik",
+    "Имя" : "Николай",
     "Фамилия" : "Фролов",
     "Отчество" : "Евгеньевич",
-    "телефон": "+7 (917) 828 2232"
-     "Email"  "frolov@bk.ru"
+    "телефон": "+7 (917) 828 2232",
+     "Email" : "frolov@bk.ru"
 }
 
 
@@ -21,9 +21,10 @@ def home(requiest):
 
 def about(request):
     text = f"""
-    Имя : {author["Имя"]}
-    Фамилия : {author["Фамилия"]}
-    "Отчество" : {author["Отчество"]}
-    "телефон": {author["телефон"]}
-     "Email": {author["Email"]}
+    Имя : {author["Имя"]}<br>
+    Фамилия : {author["Фамилия"]}<br>
+    Отчество : {author["Отчество"]}<br>
+    телефон: {author["телефон"]}<br>
+    Email: {author["Email"]}<br>
     """
+    return HttpResponse(text)
