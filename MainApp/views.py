@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
+from MainApp.models import Item
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 # author = {
@@ -10,13 +12,13 @@ from django.shortcuts import render
 #      "Email" : "frolov@bk.ru"
 # }
 
-item = [
-   {"id": 1, "name": "Кроссовки abibas", "quantity":5},
-   {"id": 2, "name": "Куртка кожаная", "quantity":2},
-   {"id": 3, "name": "Coca-cola 1 литр", "quantity":12},
-   {"id": 4, "name": "Картофель фри", "quantity":0},
-   {"id": 5, "name": "Кепка", "quantity":124},
-]
+# item = [
+#    {"id": 1, "name": "Кроссовки abibas", "quantity":5},
+#    {"id": 2, "name": "Куртка кожаная", "quantity":2},
+#    {"id": 3, "name": "Coca-cola 1 литр", "quantity":12},
+#    {"id": 4, "name": "Картофель фри", "quantity":0},
+#    {"id": 5, "name": "Кепка", "quantity":124},
+# ]
 
 def home(request):
     # text = """
@@ -40,13 +42,13 @@ def about(request):
      "Email" : "frolov@bk.ru"
 }
 
-    text = f"""
-    Имя : {author["Имя"]}<br>
-    Фамилия : {author["Фамилия"]}<br>
-    Отчество : {author["Отчество"]}<br>
-    телефон: {author["телефон"]}<br>
-    Email: {author["Email"]}<br>
-    """
+    # text = f"""
+    # Имя : {author["Имя"]}<br>
+    # Фамилия : {author["Фамилия"]}<br>
+    # Отчество : {author["Отчество"]}<br>
+    # телефон: {author["телефон"]}<br>
+    # Email: {author["Email"]}<br>
+    # """
     return render(request, "about.html", {"author" : author})
 
 # item/1
@@ -56,15 +58,23 @@ def about(request):
 
 def get_item(request, item_id):
     """ По указанному  id возвращает элемент из списка"""
-    for item in items:
-        if item['id'] == item_id:
-            result = f"""
-            <h2> Имя: {item["name"]} </h2>
-            <p> Количество: {item["quantity"]} </p>
-            <p><a href ='/items'>Назад к списку товаров</a></p>
-            """
-            return HttpResponse(result)
-    return HttpResponseNotFound(f"Товар с id={item_id} не найден")
+    # for item in items:
+    #     if item['id'] == item_id:
+    #         result = f"""
+    #         <h2> Имя: {item["name"]} </h2>
+    #         <p> Количество: {item["quantity"]} </p>
+    #         <p><a href ='/items'>Назад к списку товаров</a></p>
+    #         """
+    try:
+        item = Item.objects.get(id=item_id)
+    except ObjectDoesNotExist:
+        return HttpResponseNotFound(f"Товар с id={item_id} не найден")
+    else:
+        context = {
+            "item": item
+        }
+        return render(request, 'item_page.html', context)
+    
 
 def get_items(request):
     # result = "<h1>Список товаров</h1><ol>"
@@ -72,6 +82,8 @@ def get_items(request):
     #     result += f"""<li><a href ='/item/{item["id"]}'>{item["name"]}</li>"""
     # result += "</ol>"
     # return HttpResponse(result)
+
+    # Получаем все элементы из таблицы MainApp_item
     items = Item.objects.all()
     context = {
         "items" : items
