@@ -1,12 +1,30 @@
 [
 {
+    "model": "MainApp.color",
+    "pk": 1,
+    "fields": {
+        "name": "red"
+    }
+},
+{
+    "model": "MainApp.color",
+    "pk": 2,
+    "fields": {
+        "name": "green"
+    }
+},
+{
     "model": "MainApp.item",
     "pk": 1,
     "fields": {
         "name": "Кроссовки",
         "brand": "abibas",
         "count": 10,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": [
+            1,
+            2
+        ]
     }
 },
 {
@@ -16,7 +34,10 @@
         "name": "Костюм спортивный",
         "brand": "RBK",
         "count": 65,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": [
+            1
+        ]
     }
 },
 {
@@ -26,7 +47,8 @@
         "name": "Джинсы",
         "brand": "GJ",
         "count": 15,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": []
     }
 },
 {
@@ -36,7 +58,8 @@
         "name": "Куртка кожаная",
         "brand": "Nike",
         "count": 40,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": []
     }
 },
 {
@@ -46,7 +69,8 @@
         "name": "Джерси",
         "brand": "Luch",
         "count": 70,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": []
     }
 },
 {
@@ -56,7 +80,8 @@
         "name": "Кепка",
         "brand": "N",
         "count": 0,
-        "description": "Базовое описание"
+        "description": "Базовое описание",
+        "colors": []
     }
 }
 ]
