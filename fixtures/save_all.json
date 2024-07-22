@@ -1,0 +1,62 @@
+[
+{
+    "model": "MainApp.item",
+    "pk": 1,
+    "fields": {
+        "name": "Кроссовки",
+        "brand": "abibas",
+        "count": 10,
+        "description": "Базовое описание"
+    }
+},
+{
+    "model": "MainApp.item",
+    "pk": 2,
+    "fields": {
+        "name": "Костюм спортивный",
+        "brand": "RBK",
+        "count": 65,
+        "description": "Базовое описание"
+    }
+},
+{
+    "model": "MainApp.item",
+    "pk": 3,
+    "fields": {
+        "name": "Джинсы",
+        "brand": "GJ",
+        "count": 15,
+        "description": "Базовое описание"
+    }
+},
+{
+    "model": "MainApp.item",
+    "pk": 4,
+    "fields": {
+        "name": "Куртка кожаная",
+        "brand": "Nike",
+        "count": 40,
+        "description": "Базовое описание"
+    }
+},
+{
+    "model": "MainApp.item",
+    "pk": 5,
+    "fields": {
+        "name": "Джерси",
+        "brand": "Luch",
+        "count": 70,
+        "description": "Базовое описание"
+    }
+},
+{
+    "model": "MainApp.item",
+    "pk": 6,
+    "fields": {
+        "name": "Кепка",
+        "brand": "N",
+        "count": 0,
+        "description": "Базовое описание"
+    }
+}
+]

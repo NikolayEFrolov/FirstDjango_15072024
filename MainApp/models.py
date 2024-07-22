@@ -7,3 +7,4 @@ class Item(models.Model):
    brand = models.CharField(max_length=100)
    count = models.PositiveIntegerField()
    description = models.TextField(max_length=200, default="Базовое описание")
+ 
