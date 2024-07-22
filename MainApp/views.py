@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from MainApp.models import Item
 from django.core.exceptions import ObjectDoesNotExist
+from MainApp.forms import SnippetForm
 
 # Create your views here.
 # author = {
@@ -38,7 +39,7 @@ def about(request):
     "name" : "Николай",
     "middle_name" : "Фролов",
     "Last_name" : "Евгеньевич",
-    "phone": "+7 (917) 828 2232",
+    "phone": "+7 (917) 828 ****",
      "Email" : "frolov@bk.ru"
 }
 

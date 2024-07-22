@@ -20,7 +20,7 @@
         "name": "Кроссовки",
         "brand": "abibas",
         "count": 10,
-        "description": "Базовое описание",
+        "description": "Лучшие из АбиБос",
         "colors": [
             1,
             2
@@ -34,7 +34,7 @@
         "name": "Костюм спортивный",
         "brand": "RBK",
         "count": 65,
-        "description": "Базовое описание",
+        "description": "Летний",
         "colors": [
             1
         ]
@@ -47,7 +47,7 @@
         "name": "Джинсы",
         "brand": "GJ",
         "count": 15,
-        "description": "Базовое описание",
+        "description": "Попробуй порви",
         "colors": []
     }
 },
@@ -58,7 +58,7 @@
         "name": "Куртка кожаная",
         "brand": "Nike",
         "count": 40,
-        "description": "Базовое описание",
+        "description": "Привет 90-е",
         "colors": []
     }
 },
@@ -69,7 +69,7 @@
         "name": "Джерси",
         "brand": "Luch",
         "count": 70,
-        "description": "Базовое описание",
+        "description": "Хоккейный",
         "colors": []
     }
 },
@@ -80,7 +80,7 @@
         "name": "Кепка",
         "brand": "N",
         "count": 0,
-        "description": "Базовое описание",
+        "description": "Здесь даже солнца не видно",
         "colors": []
     }
 }
