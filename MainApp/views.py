@@ -71,7 +71,8 @@ def get_item(request, item_id):
         return HttpResponseNotFound(f"Товар с id={item_id} не найден")
     else:
         context = {
-            "item": item
+            "item": item,
+            "colors": item.colors.all()
         }
         return render(request, 'item_page.html', context)
     
@@ -87,5 +88,6 @@ def get_items(request):
     items = Item.objects.all()
     context = {
         "items" : items
+        
     }
     return render(request, "items_list.html", context)
