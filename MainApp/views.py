@@ -2,7 +2,6 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from MainApp.models import Item
 from django.core.exceptions import ObjectDoesNotExist
-from MainApp.forms import SnippetForm
 
 # Create your views here.
 # author = {
